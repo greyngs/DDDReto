@@ -14,6 +14,4 @@ public class Psicologo extends Entity<PsicologoId> {
         this.nombre = nombre;
         this.experiencia = experiencia;
     }
-
-
 }
