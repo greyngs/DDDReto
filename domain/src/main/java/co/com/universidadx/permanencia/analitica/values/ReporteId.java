@@ -8,6 +8,10 @@ public class ReporteId extends Identity {
         super(id);
     }
 
+    public ReporteId() {
+
+    }
+
     public static ReporteId of(String id) {
         return new ReporteId(id);
     }
