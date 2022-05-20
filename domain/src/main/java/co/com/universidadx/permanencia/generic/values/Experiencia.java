@@ -1,4 +1,4 @@
-package co.com.universidadx.permanencia.contenido.values;
+package co.com.universidadx.permanencia.generic.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 

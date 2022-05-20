@@ -1,9 +1,9 @@
 package co.com.universidadx.permanencia.contenido;
 
 import co.com.sofka.domain.generic.Entity;
-import co.com.universidadx.permanencia.contenido.values.Experiencia;
+import co.com.universidadx.permanencia.generic.values.Experiencia;
 import co.com.universidadx.permanencia.contenido.values.PsicologoId;
-import co.com.universidadx.permanencia.sesion.values.Nombre;
+import co.com.universidadx.permanencia.generic.values.Nombre;
 
 public class Psicologo extends Entity<PsicologoId> {
     protected Nombre nombre;

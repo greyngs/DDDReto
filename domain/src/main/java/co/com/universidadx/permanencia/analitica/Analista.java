@@ -2,8 +2,8 @@ package co.com.universidadx.permanencia.analitica;
 
 import co.com.sofka.domain.generic.Entity;
 import co.com.universidadx.permanencia.analitica.values.AnalistaId;
-import co.com.universidadx.permanencia.contenido.values.Experiencia;
-import co.com.universidadx.permanencia.sesion.values.Nombre;
+import co.com.universidadx.permanencia.generic.values.Experiencia;
+import co.com.universidadx.permanencia.generic.values.Nombre;
 
 public class Analista extends Entity<AnalistaId> {
     protected Nombre nombre;

@@ -4,7 +4,7 @@ import co.com.sofka.domain.generic.Entity;
 import co.com.universidadx.permanencia.sesion.values.Carrera;
 import co.com.universidadx.permanencia.sesion.values.Email;
 import co.com.universidadx.permanencia.sesion.values.EstudianteId;
-import co.com.universidadx.permanencia.sesion.values.Nombre;
+import co.com.universidadx.permanencia.generic.values.Nombre;
 
 public class Estudiante extends Entity<EstudianteId> {
     protected Nombre nombre;
