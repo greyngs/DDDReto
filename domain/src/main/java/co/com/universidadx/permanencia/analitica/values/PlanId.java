@@ -9,6 +9,10 @@ public class PlanId  extends Identity {
         super(id);
     }
 
+    public PlanId() {
+
+    }
+
     public static PlanId of(String id) {
         return new PlanId(id);
     }
