@@ -10,16 +10,12 @@ import java.util.Set;
 
 public class Ejercicio extends Entity<EjercicioId> {
     protected Nombre nombre;
-    protected Set<Descripcion> descripciones;
+    protected Descripcion descripcion;
 
-    public Ejercicio(EjercicioId entityId, Nombre nombre) {
+    public Ejercicio(EjercicioId entityId, Nombre nombre, Descripcion descripcion) {
         super(entityId);
         this.nombre = nombre;
-        this.descripciones = new HashSet<>();
+        this.descripcion = descripcion;
     }
 
-    public void agregarDescripcion(Descripcion descripcion) {
-        this.descripciones.add(descripcion);
-        // Validaciones aqui
-    }
 }

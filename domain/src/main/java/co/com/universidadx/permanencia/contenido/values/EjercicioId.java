@@ -7,6 +7,10 @@ public class EjercicioId extends Identity {
         super(id);
     }
 
+    public EjercicioId() {
+
+    }
+
     public static EjercicioId of(String id) {
         return new EjercicioId(id);
     }
