@@ -10,7 +10,9 @@ import co.com.universidadx.permanencia.analitica.events.ReporteCreado;
 import co.com.universidadx.permanencia.analitica.values.AnaliticaId;
 import co.com.universidadx.permanencia.analitica.values.ReporteId;
 import co.com.universidadx.permanencia.analitica.values.Resumen;
+import co.com.universidadx.permanencia.contenido.values.ContenidoId;
 import co.com.universidadx.permanencia.generic.values.Fecha;
+import co.com.universidadx.permanencia.sesion.values.SesionId;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -56,8 +58,12 @@ class AgregarReporteUseCaseTest {
 
     private List<DomainEvent> history() {
         var resumen = new Resumen("Los estudiantes reportan mejoria en sus notas");
+        var sesionId = SesionId.of("xxxxx");
+        var contenidoId = ContenidoId.of("zzzzz");
         var event = new AnaliticaCreada(
-                resumen);
+                resumen,
+                sesionId,
+                contenidoId);
         event.setAggregateRootId("xxxxx");
         return List.of(event);
     }

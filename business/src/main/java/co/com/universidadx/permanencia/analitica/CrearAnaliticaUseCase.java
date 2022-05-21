@@ -12,7 +12,7 @@ public class CrearAnaliticaUseCase extends UseCase<RequestCommand<CrearAnalitica
     @Override
     public void executeUseCase(RequestCommand<CrearAnalitica> crearAnaliticaRequestCommand) {
         var command = crearAnaliticaRequestCommand.getCommand();
-        var Analitica = new Analitica(command.getAnaliticaId(), command.getResumen());
+        var Analitica = new Analitica(command.getAnaliticaId(), command.getResumen(), command.getSesionId(), command.getContenidoId());
 
         emit().onResponse(new ResponseEvents(Analitica.getUncommittedChanges()));
     }

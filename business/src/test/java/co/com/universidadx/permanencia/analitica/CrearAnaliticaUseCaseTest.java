@@ -6,6 +6,8 @@ import co.com.universidadx.permanencia.analitica.commands.CrearAnalitica;
 import co.com.universidadx.permanencia.analitica.events.AnaliticaCreada;
 import co.com.universidadx.permanencia.analitica.values.AnaliticaId;
 import co.com.universidadx.permanencia.analitica.values.Resumen;
+import co.com.universidadx.permanencia.contenido.values.ContenidoId;
+import co.com.universidadx.permanencia.sesion.values.SesionId;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,7 +24,9 @@ public class CrearAnaliticaUseCaseTest {
     public void crearAnaliticaHappyPass() {
         var analiticaId = AnaliticaId.of("yyyyy");
         var resumen = new Resumen("Los estudiantes reportan mejoria en sus notas");
-        var command = new CrearAnalitica(analiticaId, resumen);
+        var sesionId = SesionId.of("xxxxx");
+        var contenidoId = ContenidoId.of("zzzzz");
+        var command = new CrearAnalitica(analiticaId, resumen, sesionId, contenidoId);
 
         //act
         var events = UseCaseHandler.getInstance()

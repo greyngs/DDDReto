@@ -2,12 +2,11 @@ package co.com.universidadx.permanencia.analitica;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.universidadx.permanencia.analitica.events.AnaliticaCreada;
-import co.com.universidadx.permanencia.analitica.events.ContenidoAgregadoAReporte;
-import co.com.universidadx.permanencia.analitica.events.PlanCreado;
-import co.com.universidadx.permanencia.analitica.events.ReporteCreado;
+import co.com.universidadx.permanencia.analitica.events.*;
 import co.com.universidadx.permanencia.analitica.values.*;
+import co.com.universidadx.permanencia.contenido.values.ContenidoId;
 import co.com.universidadx.permanencia.generic.values.Fecha;
+import co.com.universidadx.permanencia.sesion.values.SesionId;
 
 import java.util.List;
 import java.util.Map;
@@ -33,6 +32,10 @@ public class Analitica extends AggregateEvent<AnaliticaId> {
         var analitica = new Analitica(entityId);
         events.forEach(analitica::applyEvent);
         return analitica;
+    }
+
+    public void actualizarResumen(Resumen resumen) {
+        appendChange(new ResumenActualizado(resumen)).apply();
     }
 
     public void agregarPlan(Meta meta, Estrategia estrategia){

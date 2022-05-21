@@ -1,15 +1,16 @@
 package co.com.universidadx.permanencia.analitica;
 
 import co.com.sofka.domain.generic.EventChange;
-import co.com.universidadx.permanencia.analitica.events.AnaliticaCreada;
-import co.com.universidadx.permanencia.analitica.events.ContenidoAgregadoAReporte;
-import co.com.universidadx.permanencia.analitica.events.PlanCreado;
-import co.com.universidadx.permanencia.analitica.events.ReporteCreado;
+import co.com.universidadx.permanencia.analitica.events.*;
 import co.com.universidadx.permanencia.analitica.values.PlanId;
 
 public class AnaliticaEventChange extends EventChange {
     public AnaliticaEventChange(Analitica analitica) {
         apply((AnaliticaCreada event) ->{
+            analitica.resumen = event.getResumen();
+        });
+
+        apply((ResumenActualizado event) -> {
             analitica.resumen = event.getResumen();
         });
 

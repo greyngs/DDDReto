@@ -11,6 +11,8 @@ import co.com.universidadx.permanencia.analitica.values.AnaliticaId;
 import co.com.universidadx.permanencia.analitica.values.Estrategia;
 import co.com.universidadx.permanencia.analitica.values.Meta;
 import co.com.universidadx.permanencia.analitica.values.Resumen;
+import co.com.universidadx.permanencia.contenido.values.ContenidoId;
+import co.com.universidadx.permanencia.sesion.values.SesionId;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -57,8 +59,12 @@ class AgregarPlanUseCaseTest {
 
     private List<DomainEvent> history() {
         var resumen = new Resumen("DDD");
+        var sesionId = SesionId.of("xxxxx");
+        var contenidoId = ContenidoId.of("zzzzz");
         var event = new AnaliticaCreada(
-                resumen);
+                resumen,
+                sesionId,
+                contenidoId);
         event.setAggregateRootId("xxxxx");
         return List.of(event);
     }
